@@ -1,19 +1,37 @@
-import { LinearGradient } from "expo-linear-gradient";
-import { Text, TouchableOpacity, View } from "react-native";
-import styles from "../../assets/styles/homeStyles";
+import { StatusBar } from "expo-status-bar";
+import { Image, StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+export default function App() {
   return (
-    <LinearGradient colors={["#87CEFA", "#B0E0FF"]} style={styles.container}>
-      <View style={styles.card}>
-        <Text style={styles.title1}>✨ My First App ✨</Text>
-        <Text style={styles.title2}>My Name is Nurul Inayah</Text>
-        <Text style={styles.subtitle}>My Experience in Web Dev 🚀</Text>
+    <View style={styles.container}>
+      {/* TEXT */}
+      <Text style={styles.text}>Halo, saya Nurul Inayah - 2405102013</Text>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Mulai</Text>
-        </TouchableOpacity>
-      </View>
-    </LinearGradient>
+      {/* GAMBAR */}
+      <Image
+        source={require("../../assets/images/image.png")}
+        style={styles.image}
+      />
+
+      <StatusBar style="auto" />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#8ddbff", // warna cerah
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  image: {
+    width: 120,
+    height: 120,
+    marginTop: 20,
+  },
+});
